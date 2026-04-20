@@ -5,5 +5,7 @@ load_dotenv()
 
 llm = ChatGroq(model="llama-3.1-8b-instant") 
 
-response = llm.invoke("What is the capital of France?")
+user_input = input("Enter your question: ")
+
+response = llm.invoke(user_input)
 print(response.content)
