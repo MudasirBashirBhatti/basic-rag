@@ -15,3 +15,11 @@ pip freeze > requirements.txt
 ```
 
 ---
+
+# 3. install these two packages and update requirements
+
+```bash
+pip install langchain-community pypdf
+```
+
+---

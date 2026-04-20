@@ -17,6 +17,7 @@ orjson==3.11.8
 packaging==26.1
 pydantic==2.13.2
 pydantic_core==2.46.2
+pypdf==6.10.2
 python-dotenv==1.2.2
 PyYAML==6.0.3
 requests==2.33.1
