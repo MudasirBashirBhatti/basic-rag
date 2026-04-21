@@ -60,17 +60,22 @@ rag_chain = (
 )
 
 # 8. querying
-print("\n--- AI Resume Assistant ---")
+# for cli
+# print("\n--- AI Resume Assistant ---")
 
-while True:
-    query = input("\nAsk question (or type exit): ")
+# while True:
+#     query = input("\nAsk question (or type exit): ")
 
-    if query.lower() == "exit":
-        break
+#     if query.lower() == "exit":
+#         break
 
-    # debug(query)  # uncomment to inspect retrieval
+#     # debug(query)  # uncomment to inspect retrieval
 
-    response = rag_chain.invoke(query)
+#     response = rag_chain.invoke(query)
 
-    print("\nAI Answer:")
-    print(response.content)
+#     print("\nAI Answer:")
+#     print(response.content)
+
+# for api
+def ask_question(query: str):
+    return rag_chain.invoke(query).content
