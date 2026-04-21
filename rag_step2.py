@@ -1,13 +1,18 @@
 from langchain_community.document_loaders import PyPDFLoader
 from langchain_text_splitters import RecursiveCharacterTextSplitter
+from langchain_huggingface import HuggingFaceEmbeddings
 
 loader = PyPDFLoader("resume.pdf") # Initialize the PDF loader with the path to your PDF file
 pages = loader.load() # Load the PDF and split it into pages
 
-print(f"Total Pages: {len(pages)}")
-print(pages[0].page_content[:500]) # Print the first 500 characters of the first page's content
+text_splitter = RecursiveCharacterTextSplitter(chunk_size=500, chunk_overlap=50) # Initialize the text splitter with a chunk size of 500 characters and an overlap of 50 characters between chunks
+chunks = text_splitter.split_documents(pages) # Split the pages into smaller chunks of text
 
-text_splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=50)
-chunks = text_splitter.split_documents(pages)
+embedding_model = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2") # Initialize the embedding model using a pre-trained model from Hugging Face
 
-print(f"Total Chunks: {len(chunks)}")
+sample_text = chunks[0].page_content
+vector = embedding_model.embed_query(sample_text) # Generate an embedding vector for the sample text chunk
+
+print(f"Text ka pehla hissa: {sample_text[:50]}...")
+print(f"Vector ki length: {len(vector)}") # Ye aksar 384 ya 768 hoti hai
+print(f"Vector ke pehle 5 numbers: {vector[:5]}")

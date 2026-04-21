@@ -23,3 +23,9 @@ pip install langchain-community pypdf
 ```
 
 ---
+
+# 4. install these two packages and update requirements
+
+```bash
+pip install langchain-huggingface sentence-transformers
+```
