@@ -1,5 +1,7 @@
 # Vector Database
 my_db/
+physics_db/
+physics_9.pdf
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

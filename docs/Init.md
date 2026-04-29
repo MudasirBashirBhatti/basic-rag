@@ -29,3 +29,9 @@ pip install langchain-community pypdf
 ```bash
 pip install langchain-huggingface sentence-transformers
 ```
+
+# 5. run virtual environment
+
+```bash
+source menv/Scripts/activate
+```
