@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from pydantic import BaseModel
-from data_retrival import ask_question
+from src.cv_analyzer.data_retrival import ask_question
 app = FastAPI()
 
 class QueryRequest(BaseModel):

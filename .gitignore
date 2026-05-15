@@ -1,7 +1,11 @@
 # Vector Database
 my_db/
 physics_db/
+chemistry_db/
 physics_9.pdf
+chemistry-10th.pdf
+resume.pdf
+10th-updated-phy.pdf
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
